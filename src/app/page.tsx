@@ -58,38 +58,54 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero hero-grid">
-        <div>
+      <section className="hero hero-grid home-hero">
+        <div className="hero-copy">
           <p className="pill">Trusted Admission Guidance</p>
-          <h1>Direct College Admissions & Study Abroad Experts</h1>
-          <p>
-            Secure admissions in top private and deemed universities across
-            India with personalized counseling, documentation support, and
-            overseas education guidance.
+          <h1>
+            Direct College Admissions
+            <span>&amp; Study Abroad Guidance</span>
+          </h1>
+          <p className="hero-lede">
+            Make your next education decision with clear college shortlisting,
+            documentation support, and guidance tailored to your profile.
           </p>
           <div className="cta-group">
             <Link className="btn btn-primary" href="/contact">
-              Apply Now
+              Start Your Application
             </Link>
             <a className="btn btn-secondary" href={`tel:${phoneNumber}`}>
-              Talk to an Admission Counselor
+              Talk to a Counsellor
             </a>
           </div>
-          <p className="hero-small">
-            No misleading claims. Clear process, transparent guidance, and
-            student-first support.
-          </p>
+          <ul className="hero-assurance" aria-label="Our commitments">
+            <li>Transparent guidance</li>
+            <li>Student-first support</li>
+            <li>No misleading claims</li>
+          </ul>
         </div>
         <div className="hero-panel">
-          <h2>Admission Open 2026</h2>
+          <div className="hero-panel-topline">
+            <p>2026 intake</p>
+            <span>Applications open</span>
+          </div>
+          <h2>Plan your admission with confidence.</h2>
           <p>
             End-to-end support for counselling strategy, documents, college
             shortlisting, and application execution.
           </p>
-          <ul className="list">
-            <li>Private & Deemed University Admissions</li>
-            <li>Management Quota Guidance</li>
-            <li>Study Abroad & Visa Support</li>
+          <ul className="hero-benefits">
+            <li>
+              <span aria-hidden="true">01</span>
+              Private and deemed university admissions
+            </li>
+            <li>
+              <span aria-hidden="true">02</span>
+              Eligibility and application guidance
+            </li>
+            <li>
+              <span aria-hidden="true">03</span>
+              Study abroad and visa documentation support
+            </li>
           </ul>
           <a className="btn btn-primary" href={`tel:${phoneNumber}`}>
             Call +91 {phoneNumber}

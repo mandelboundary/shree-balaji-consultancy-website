@@ -1,44 +1,97 @@
 import type { Metadata } from "next";
+import UniversityFinder, { type University } from "./university-finder";
 
 export const metadata: Metadata = {
   title: "Universities",
   description:
-    "University admission landing content for institutions where admissions guidance is available.",
+    "Find universities by course, study level, location, and preferred annual budget.",
 };
 
-const universities = [
-  "Lovely Professional University",
-  "Chandigarh University",
-  "Amity University",
-  "Manipal University",
-  "SRM University",
-  "VIT",
-  "KIIT",
-  "Jain University",
-  "Sharda University",
+const universities: University[] = [
+  {
+    name: "Lovely Professional University",
+    location: "Punjab",
+    fields: ["Engineering", "Management", "Computer Applications"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
+  {
+    name: "Chandigarh University",
+    location: "Punjab",
+    fields: ["Engineering", "Management", "Computer Applications"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
+  {
+    name: "Amity University",
+    location: "Uttar Pradesh",
+    fields: ["Engineering", "Management", "Law"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
+  {
+    name: "Manipal University",
+    location: "Karnataka",
+    fields: ["Engineering", "Management", "Medical & Allied"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹5 lakh+",
+  },
+  {
+    name: "SRM University",
+    location: "Tamil Nadu",
+    fields: ["Engineering", "Management", "Medical & Allied"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
+  {
+    name: "VIT",
+    location: "Tamil Nadu",
+    fields: ["Engineering", "Computer Applications"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "Up to ₹2 lakh",
+  },
+  {
+    name: "KIIT",
+    location: "Odisha",
+    fields: ["Engineering", "Management", "Law"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
+  {
+    name: "Jain University",
+    location: "Karnataka",
+    fields: ["Management", "Computer Applications"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
+  {
+    name: "Sharda University",
+    location: "Uttar Pradesh",
+    fields: ["Engineering", "Management", "Medical & Allied"],
+    levels: ["Undergraduate", "Postgraduate"],
+    budget: "₹2–5 lakh",
+  },
 ];
 
 export default function UniversitiesPage() {
   return (
     <section>
-      <h1>University Admission Guidance</h1>
-      <p>
-        Explore admissions support for top private and deemed institutions.
-        Pages should only be published for institutions where your team is
-        authorized to assist.
-      </p>
-      <div className="card-grid section-gap">
-        {universities.map((name) => (
-          <article className="card" key={name}>
-            <h3>Admission in {name}</h3>
-            <p>
-              Course shortlisting, eligibility checks, and application guidance.
-            </p>
-          </article>
-        ))}
+      <div className="page-intro">
+        <p className="section-label">University shortlisting</p>
+        <h1>University Admission Guidance</h1>
+        <p>
+          Compare institutions by course, study level, preferred location, and
+          budget. Use the finder to create a practical shortlist for a
+          counsellor discussion.
+        </p>
       </div>
+
+      <UniversityFinder universities={universities} />
+
       <p className="seo-note section-gap">
         Disclaimer: Listing a university does not imply official affiliation.
+        Budget bands are indicative for shortlisting only; program fees and
+        eligibility must be verified with the institution.
       </p>
     </section>
   );
