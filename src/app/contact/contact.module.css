@@ -1,0 +1,208 @@
+.intro {
+  max-width: 850px;
+}
+
+.intro h1 {
+  max-width: 760px;
+  font-size: clamp(2.2rem, 5vw, 4rem);
+}
+
+.intro > p:last-child {
+  color: #625d5c;
+  font-size: 1.02rem;
+  max-width: 760px;
+}
+
+.officeGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 2.5rem;
+}
+
+.officeCard {
+  min-width: 0;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #e1d6d3;
+  border-radius: 20px;
+  box-shadow: 0 16px 34px rgba(64, 24, 24, 0.08);
+}
+
+.mapFrame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  overflow: hidden;
+  background: #eadfdb;
+  border-bottom: 1px solid #e1d6d3;
+}
+
+.mapFrame iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.officeBody {
+  padding: 1.25rem;
+}
+
+.officeHeading {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #eee5e2;
+}
+
+.officeHeading p {
+  color: var(--primary);
+  font-size: 0.7rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.officeHeading h2 {
+  font-size: 1.65rem;
+  margin: 0.2rem 0 0;
+}
+
+.officeHeading > span {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: #f5e9e5;
+  color: var(--primary);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.detailBlock {
+  margin-top: 1rem;
+}
+
+.detailLabel {
+  color: #8a7e7b;
+  font-size: 0.68rem;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  margin-bottom: 0.35rem;
+}
+
+.detailBlock address {
+  display: grid;
+  color: #342b29;
+  font-size: 0.86rem;
+  font-style: normal;
+  line-height: 1.6;
+}
+
+.phoneList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.phoneList a {
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: #f8efec;
+  color: #701414;
+  font-size: 0.76rem;
+  font-weight: 700;
+}
+
+.email {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #4e3835;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.officeActions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.55rem;
+  margin-top: 1.25rem;
+}
+
+.officeActions a {
+  min-width: 0;
+  padding-inline: 0.75rem;
+  font-size: 0.78rem;
+}
+
+.contactBanner {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding: clamp(1.4rem, 4vw, 2.25rem);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at 92% 20%, rgba(255, 255, 255, 0.14), transparent 24%),
+    linear-gradient(140deg, #7c1313, #4d0b0b);
+  color: #fff;
+}
+
+.bannerLabel {
+  color: #efc4ad;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+}
+
+.contactBanner h2 {
+  color: #fff;
+  margin: 0.2rem 0 0.45rem;
+}
+
+.contactBanner > div > p:last-child {
+  max-width: 700px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.contactBanner > a {
+  white-space: nowrap;
+}
+
+@media (max-width: 920px) {
+  .officeGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .officeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .mapFrame {
+    aspect-ratio: 16 / 9;
+  }
+
+  .contactBanner {
+    grid-template-columns: 1fr;
+  }
+
+  .contactBanner > a {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 400px) {
+  .officeActions {
+    grid-template-columns: 1fr;
+  }
+}

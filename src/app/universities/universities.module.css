@@ -1,0 +1,242 @@
+.finder {
+  margin-top: 3rem;
+}
+
+.finderHeading {
+  max-width: 760px;
+}
+
+.eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  color: var(--primary);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  margin-bottom: 0.75rem;
+}
+
+.eyebrow::before {
+  content: "";
+  width: 34px;
+  height: 2px;
+  background: var(--primary);
+}
+
+.finderHeading h2 {
+  font-size: clamp(1.8rem, 4vw, 3.25rem);
+  letter-spacing: -0.045em;
+  margin-bottom: 0.85rem;
+}
+
+.finderHeading h2 span {
+  color: var(--primary);
+}
+
+.finderHeading > p:last-child {
+  color: #5f5b5b;
+  max-width: 620px;
+}
+
+.filterPanel {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  padding: clamp(1.2rem, 3vw, 2.25rem);
+  background: #efeceb;
+  border: 1px solid #d8d0cd;
+  border-radius: 24px;
+}
+
+.filterField {
+  display: grid;
+  gap: 0.45rem;
+}
+
+.filterField span {
+  color: #55504f;
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.filterField select {
+  width: 100%;
+  min-height: 54px;
+  border: 1px solid #cbc2bf;
+  border-radius: 10px;
+  background: #fff;
+  color: #1a1a1a;
+  font: inherit;
+  font-weight: 600;
+  padding: 0 2.5rem 0 0.9rem;
+}
+
+.filterField select:focus-visible,
+.searchButton:focus-visible,
+.resultHeader button:focus-visible,
+.emptyState button:focus-visible {
+  outline: 3px solid rgba(140, 21, 21, 0.25);
+  outline-offset: 2px;
+}
+
+.searchButton {
+  grid-column: 2 / 4;
+  justify-self: stretch;
+  min-height: 54px;
+  border: 0;
+  border-radius: 11px;
+  background: linear-gradient(180deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  cursor: pointer;
+  font: inherit;
+  font-weight: 800;
+  margin-top: 0.65rem;
+  box-shadow: 0 10px 22px rgba(95, 15, 15, 0.2);
+  transition: transform 150ms ease, box-shadow 150ms ease;
+}
+
+.searchButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 14px 28px rgba(95, 15, 15, 0.26);
+}
+
+.searchButton span {
+  margin-left: 0.35rem;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2rem 0 1rem;
+  color: #625d5c;
+}
+
+.resultHeader strong {
+  color: var(--primary);
+  font-size: 1.2rem;
+}
+
+.resultHeader button,
+.emptyState button {
+  border: 0;
+  background: transparent;
+  color: var(--primary);
+  cursor: pointer;
+  font: inherit;
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.resultsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.universityCard {
+  min-height: 230px;
+  padding: 1.25rem;
+  background: #fff;
+  border: 1px solid #e2d9d6;
+  border-radius: 16px;
+  box-shadow: 0 12px 26px rgba(64, 24, 24, 0.07);
+  display: flex;
+  flex-direction: column;
+}
+
+.location {
+  color: var(--primary);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin-bottom: 0.55rem;
+}
+
+.universityCard h3 {
+  font-size: 1.08rem;
+  line-height: 1.35;
+  margin-bottom: 0.55rem;
+}
+
+.universityCard > p:not(.location) {
+  color: #5f5a59;
+  font-size: 0.92rem;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+.tags span {
+  background: #f6eeee;
+  border: 1px solid #ead9d7;
+  border-radius: 999px;
+  color: #6f1717;
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25rem 0.55rem;
+}
+
+.emptyState {
+  padding: 3rem 1.5rem;
+  text-align: center;
+  background: #fff;
+  border: 1px dashed #cdbfbc;
+  border-radius: 16px;
+}
+
+.emptyState h3 {
+  margin-bottom: 0.35rem;
+}
+
+.emptyState p {
+  color: #625d5c;
+  margin-bottom: 0.8rem;
+}
+
+@media (max-width: 900px) {
+  .filterPanel {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .searchButton {
+    grid-column: 1 / -1;
+  }
+
+  .resultsGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 580px) {
+  .finder {
+    margin-top: 2.25rem;
+  }
+
+  .filterPanel,
+  .resultsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .filterPanel {
+    border-radius: 18px;
+  }
+
+  .resultHeader {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}

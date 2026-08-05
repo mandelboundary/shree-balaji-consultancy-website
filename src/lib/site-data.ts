@@ -6,12 +6,45 @@ export const email = "shreebalaji.education@gmail.com";
 
 export const address = {
   lines: [
-    "15A, M.S. Complex, 3rd Floor",
-    "Aambagan, Beside Hotel Indralok",
-    "Sakchi, Jamshedpur",
+    "3rd Floor, MS Complex, 15A",
+    "Beside Hotel Indralok, Ambagan, Sakchi",
+    "Jamshedpur, Jharkhand 831001",
   ],
   city: "Jamshedpur",
 };
+
+export const offices = [
+  {
+    city: "Jamshedpur",
+    label: "Head office",
+    phones: ["9431568361", "9431136656", "9123285233"],
+    address: [
+      "3rd Floor, MS Complex, 15A",
+      "Beside Hotel Indralok, Ambagan, Sakchi",
+      "Jamshedpur, Jharkhand 831001",
+    ],
+  },
+  {
+    city: "Ranchi",
+    label: "Regional office",
+    phones: ["9431568361", "9334975960", "9431136656"],
+    address: [
+      "302, 3rd Floor, Hari Om Tower",
+      "Circular Road",
+      "Ranchi, Jharkhand 834001",
+    ],
+  },
+  {
+    city: "Bangalore",
+    label: "Regional office",
+    phones: ["9986185654", "9342140307"],
+    address: [
+      "35/4, Church Street",
+      "Beside Hotel Empire, MG Road",
+      "Bangalore, Karnataka 560001",
+    ],
+  },
+] as const;
 
 export const trustStats = [
   { label: "Years of experience", value: "19+" },
