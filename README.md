@@ -43,7 +43,6 @@ A responsive education consultancy website for admissions, study-abroad planning
 src/app/                App Router pages and global styles
 src/lib/site-data.ts    Shared services, programs, FAQs, and contact data
 public/                 Campus images, flags, and social preview image
-scripts/                Static-hosting build preparation
 ```
 
 ## Run Locally
@@ -69,7 +68,7 @@ npm run lint
 npm run build
 ```
 
-The production build is exported to `dist/` and then prepared for static hosting.
+The production build is exported to `dist/`.
 
 ## Content Notes
 
