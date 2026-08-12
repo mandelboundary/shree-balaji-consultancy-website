@@ -27,6 +27,29 @@ export const metadata: Metadata = {
     "Study Abroad Consultancy",
     "Career Counselling",
   ],
+  openGraph: {
+    type: "website",
+    url: "https://www.shreebalajiconsultancy.com",
+    siteName: "Shree Balaji Consultancy",
+    title: "Shree Balaji Consultancy | Admissions & Study Abroad",
+    description:
+      "Admissions in India and study abroad guidance backed by 21+ years of student support.",
+    images: [
+      {
+        url: "https://www.shreebalajiconsultancy.com/og.png",
+        width: 1731,
+        height: 909,
+        alt: "Shree Balaji Consultancy — admissions in India and study abroad worldwide",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Shree Balaji Consultancy | Admissions & Study Abroad",
+    description:
+      "Admissions in India and study abroad guidance backed by 21+ years of student support.",
+    images: ["https://www.shreebalajiconsultancy.com/og.png"],
+  },
 };
 
 export default function RootLayout({
