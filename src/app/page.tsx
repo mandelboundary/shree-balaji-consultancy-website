@@ -2,10 +2,12 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import {
   allServices,
+  blogPosts,
   blogTopics,
   counsellingTypes,
   faqs,
   phoneNumber,
+  testimonials,
   trustStats,
   whyChooseUs,
 } from "@/lib/site-data";
@@ -50,14 +52,33 @@ export default function HomePage() {
     "Australia",
     "Germany",
     "Russia",
+    "Ukraine",
     "Georgia",
     "Uzbekistan",
     "Kazakhstan",
     "Bangladesh",
   ];
 
+  const medicalHighlights = [
+    {
+      title: "MBBS & Medical Counselling",
+      description:
+        "Complete guidance for NEET, MBBS, BDS and allied medical seats in private institutions.",
+    },
+    {
+      title: "MBBS University Shortlisting",
+      description:
+        "Personalized college shortlists based on budget, location, and eligibility.",
+    },
+    {
+      title: "Document Support & Visa Advice",
+      description:
+        "Application, document verification, and study abroad visa support for medical students.",
+    },
+  ];
+
   return (
-    <>
+    <div className="home-page">
       <section className="hero hero-grid home-hero">
         <div className="hero-copy">
           <p className="pill">Trusted Admission Guidance</p>
@@ -83,7 +104,7 @@ export default function HomePage() {
             <li>No misleading claims</li>
           </ul>
         </div>
-        <div className="hero-panel">
+        <div className="hero-panel hero-card-interactive">
           <div className="hero-panel-topline">
             <p>2026 intake</p>
             <span>Applications open</span>
@@ -113,9 +134,10 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="card-grid section-gap">
-        {trustStats.map((item) => (
-          <article key={item.label} className="card">
+      <section className="card-grid section-gap trust-grid">
+        {trustStats.map((item, index) => (
+          <article key={item.label} className="card stat-card">
+            <span className="card-kicker">0{index + 1}</span>
             <p className="stat">{item.value}</p>
             <p>{item.label}</p>
           </article>
@@ -132,10 +154,27 @@ export default function HomePage() {
         <p className="section-label">Our All Services</p>
         <h2>What we are offering to Students</h2>
         <div className="card-grid services-grid">
-          {allServices.map((service) => (
+          {allServices.map((service, index) => (
             <article key={service.title} className="card service-card">
+              <span className="service-index">0{index + 1}</span>
               <h3>{service.title}</h3>
               <p>{service.description}</p>
+              <span className="card-link">Explore service <span aria-hidden="true">↗</span></span>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-gap">
+        <p className="section-label">MBBS & Medical Admissions</p>
+        <h2>Trusted guidance for medical university admissions</h2>
+        <div className="card-grid services-grid">
+          {medicalHighlights.map((item, index) => (
+            <article key={item.title} className="card service-card medical-card">
+              <span className="service-index">M{index + 1}</span>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+              <span className="card-link">View admission support <span aria-hidden="true">↗</span></span>
             </article>
           ))}
         </div>
@@ -150,14 +189,48 @@ export default function HomePage() {
               key={item.title}
               className={`counselling-card counselling-card--${item.variant}`}
             >
+              <span className="counselling-label">Counselling pathway</span>
               <h3>{item.title}</h3>
               <p>{item.description}</p>
+              <span className="counselling-arrow" aria-hidden="true">↗</span>
             </article>
           ))}
         </div>
       </section>
 
-      <section className="cta-banner section-gap">
+      <section className="section-gap testimonial-section">
+        <p className="section-label">Student Success</p>
+        <h2>What students and parents are saying</h2>
+        <div className="testimonial-grid">
+          {testimonials.map((testimonial) => (
+            <article key={testimonial.name} className="testimonial-card">
+              <span className="quote-mark" aria-hidden="true">“</span>
+              <p className="testimonial-quote">“{testimonial.quote}”</p>
+              <p className="testimonial-name">{testimonial.name}</p>
+              <p className="testimonial-role">{testimonial.role}</p>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-gap">
+        <h2>Latest Blog Guides</h2>
+        <div className="card-grid blog-grid">
+          {blogPosts.map((post) => (
+            <article key={post.title} className="card blog-card">
+              <span className="blog-tag">{post.category}</span>
+              <h3>{post.title}</h3>
+              <p>{post.excerpt}</p>
+              <div className="blog-meta">
+                <p className="blog-date">{post.date}</p>
+                <span aria-hidden="true">Read guide ↗</span>
+              </div>
+            </article>
+          ))}
+        </div>
+      </section>
+
+      <section className="section-gap cta-banner">
         <p>
           Helping Students In Getting Admission Over 1000+ Colleges in India.
         </p>
@@ -170,9 +243,9 @@ export default function HomePage() {
         <h2>Our Popular Courses</h2>
         <div className="chip-grid">
           {popularCourses.map((course) => (
-            <span key={course} className="chip">
-              {course}
-            </span>
+            <Link key={course} className="chip" href="/admissions">
+              {course}<span aria-hidden="true">↗</span>
+            </Link>
           ))}
         </div>
       </section>
@@ -181,8 +254,9 @@ export default function HomePage() {
         <h2>Study Abroad Countries</h2>
         <div className="country-grid">
           {studyCountries.map((country) => (
-            <article key={country} className="country-card">
+            <article key={country} className="country-card home-country-card">
               <p>{country}</p>
+              <span aria-hidden="true">↗</span>
             </article>
           ))}
         </div>
@@ -192,9 +266,11 @@ export default function HomePage() {
         <h2>Latest Blog Topics</h2>
         <div className="card-grid">
           {blogTopics.slice(0, 6).map((topic) => (
-            <article key={topic} className="card">
+            <article key={topic} className="card topic-card">
+              <span className="topic-label">Student guide</span>
               <h3>{topic}</h3>
               <p>SEO content topic for admissions and career guidance.</p>
+              <span className="card-link">Read article <span aria-hidden="true">↗</span></span>
             </article>
           ))}
         </div>
@@ -232,6 +308,6 @@ export default function HomePage() {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
-    </>
+    </div>
   );
 }

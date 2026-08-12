@@ -47,10 +47,55 @@ export const offices = [
 ] as const;
 
 export const trustStats = [
-  { label: "Years of experience", value: "19+" },
-  { label: "Colleges partnered", value: "1000+" },
-  { label: "Students guided", value: "5000+" },
-  { label: "Countries served", value: "8+" },
+  { label: "Years of experience", value: "21+" },
+  { label: "Colleges partnered", value: "1500+" },
+  { label: "Students guided", value: "15000+" },
+  { label: "Countries served", value: "18+" },
+];
+
+export const testimonials = [
+  {
+    name: "Riya Sharma",
+    role: "NEET aspirant",
+    quote:
+      "Shree Balaji Consultancy helped me secure an MBBS seat in a private medical college with clear guidance and fast application support.",
+  },
+  {
+    name: "Aman Patel",
+    role: "Parent",
+    quote:
+      "Their team was patient, honest, and available at every step. The counselling made the admission process easy for our son.",
+  },
+  {
+    name: "Priya Singh",
+    role: "BDS aspirant",
+    quote:
+      "They provided a strong shortlist of colleges, and the document guidance saved us weeks of hassle.",
+  },
+];
+
+export const blogPosts = [
+  {
+    title: "MBBS Admission Process for 2026",
+    excerpt:
+      "Understand the steps to apply for MBBS programs, NEET counselling, and medical college shortlisting.",
+    category: "Medical Admissions",
+    date: "Jun 2026",
+  },
+  {
+    title: "Top Private Medical Colleges in India",
+    excerpt:
+      "A curated list of private and deemed medical colleges that offer MBBS and allied health programs.",
+    category: "College Shortlisting",
+    date: "May 2026",
+  },
+  {
+    title: "How to Choose the Right Medical Career Path",
+    excerpt:
+      "Get practical advice for selecting MBBS, BDS, Nursing, and allied healthcare programs.",
+    category: "Career Counselling",
+    date: "Apr 2026",
+  },
 ];
 
 export const whyChooseUs = {
