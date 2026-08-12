@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { blogTopics } from "@/lib/site-data";
+import { blogPosts } from "@/lib/site-data";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -10,16 +10,22 @@ export const metadata: Metadata = {
 export default function BlogPage() {
   return (
     <section>
-      <h1>Blog</h1>
+      <p className="section-label">Blog</p>
+      <h1>Admission & Counselling Guides</h1>
       <p>
-        SEO-ready topic ideas to publish consistent, high-intent content for
-        students and parents.
+        Explore practical advice, latest MBBS admission updates, and career
+        counselling articles for Indian students.
       </p>
-      <ul className="list section-gap">
-        {blogTopics.map((topic) => (
-          <li key={topic}>{topic}</li>
+      <div className="card-grid blog-grid section-gap">
+        {blogPosts.map((post) => (
+          <article key={post.title} className="card blog-card">
+            <span className="blog-tag">{post.category}</span>
+            <h2>{post.title}</h2>
+            <p>{post.excerpt}</p>
+            <p className="blog-date">{post.date}</p>
+          </article>
         ))}
-      </ul>
+      </div>
     </section>
   );
 }
