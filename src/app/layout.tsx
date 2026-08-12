@@ -1,14 +1,7 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
 import Link from "next/link";
 import { address, email, footerLinks, phoneNumber, phoneNumbers } from "@/lib/site-data";
 import "./globals.css";
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  weight: ["400", "500", "600", "700", "800"],
-  subsets: ["latin"],
-});
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.shreebalajiconsultancy.com"),
@@ -58,7 +51,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={poppins.variable}>
+    <html lang="en">
       <body>
         <div className="top-strip">
           <div className="container top-strip-inner">
