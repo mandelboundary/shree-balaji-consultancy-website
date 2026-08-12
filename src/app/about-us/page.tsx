@@ -32,58 +32,7 @@ export const metadata: Metadata = {
 export default function AboutUsPage() {
   return (
     <>
-      <section className="hero about-hero">
-        <div className="hero-copy">
-          <p className="pill">About Us</p>
-          <h1>About Shree Balaji Consultancy</h1>
-          <p className="hero-lede">
-            Shree Balaji Consultancy helps students and parents make informed
-            higher-education choices for MBBS, engineering, management, and
-            study abroad. We deliver transparent counselling, verified college
-            shortlists, and seamless application support.
-          </p>
-          <div className="cta-group">
-            <Link className="btn btn-primary" href="/contact">
-              Book a Free Consultation
-            </Link>
-            <a className="btn btn-secondary" href={`tel:${phoneNumber}`}>
-              Call +91 {phoneNumber}
-            </a>
-          </div>
-        </div>
-
-        <div className="hero-panel about-hero-panel">
-          <div className="hero-panel-topline">
-            <p>21 years of experience</p>
-            <span>1000+ colleges supported</span>
-          </div>
-          <h2>Credible counselling backed by results</h2>
-          <p>
-            We guide every student with clear eligibility checks, honest college
-            evaluation, and timely application help so families can focus on the
-            next step.
-          </p>
-          <ul className="hero-benefits">
-            <li>
-              <span aria-hidden="true">01</span>
-              Transparent admission guidance with no hidden fees
-            </li>
-            <li>
-              <span aria-hidden="true">02</span>
-              Personalized MBBS and study abroad shortlists aligned to your goals
-            </li>
-            <li>
-              <span aria-hidden="true">03</span>
-              Document review, application tracking, and dedicated counsellor support
-            </li>
-          </ul>
-          <a className="btn btn-primary" href="/contact">
-            Start your admission journey
-          </a>
-        </div>
-      </section>
-
-      <section className="about-film" aria-labelledby="about-film-title">
+      <section className="about-film about-film-first" aria-labelledby="about-film-title">
         <video
           className="about-film-video"
           autoPlay
@@ -100,9 +49,9 @@ export default function AboutUsPage() {
         </video>
         <div className="about-film-content">
           <p className="about-film-label">Our story in motion</p>
-          <h2 id="about-film-title">
+          <h1 id="about-film-title">
             Your ambition deserves a wider horizon.
-          </h2>
+          </h1>
           <p>
             We bring students, families, universities, and opportunity together
             through guidance that stays personal from the first conversation to
@@ -113,6 +62,42 @@ export default function AboutUsPage() {
           </Link>
         </div>
         <p className="about-film-note">Admissions · Counselling · Study abroad</p>
+      </section>
+
+      <section className="about-story section-gap">
+        <div className="about-story-copy">
+          <p className="section-label">About Shree Balaji Consultancy</p>
+          <h2>Credible counselling, made personal.</h2>
+          <p>
+            We help students and parents make informed higher-education choices
+            for MBBS, engineering, management, and study abroad. Every plan is
+            built around verified options, transparent advice, and practical
+            application support.
+          </p>
+          <div className="cta-group">
+            <Link className="btn btn-primary" href="/contact">
+              Book a Free Consultation
+            </Link>
+            <a className="btn btn-secondary" href={`tel:${phoneNumber}`}>
+              Call +91 {phoneNumber}
+            </a>
+          </div>
+        </div>
+
+        <div className="about-story-panel">
+          <div className="hero-panel-topline">
+            <p>21 years of experience</p>
+            <span>1000+ colleges supported</span>
+          </div>
+          <ul className="hero-benefits">
+            <li><span aria-hidden="true">01</span>Transparent guidance with no hidden fees</li>
+            <li><span aria-hidden="true">02</span>Personalised India and study abroad shortlists</li>
+            <li><span aria-hidden="true">03</span>Document review and application tracking</li>
+          </ul>
+          <Link className="btn btn-primary" href="/contact">
+            Start your admission journey
+          </Link>
+        </div>
       </section>
 
       <section className="section-gap credentials-section">
